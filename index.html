@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="valueCalculator">
   <head>
     <meta charset="utf-8">
     <script type="text/javascript" src="angular.min.js"></script>
@@ -17,6 +17,16 @@
       </div>
 
       Your calculated value of the string is: {{value}}
+    </div>
+
+    <div ng-controller="DIController">
+      <input type="text" ng-model="name" ng-blur="upper();">
+    </div>
+
+    <div ng-controller="bulbController">
+      <button ng-click="changeBulbState()"> Bulb Switch </button>
+      <br>
+      <img ng-src="images/bulb_{{stateOfBulb}}.jpg" width="200" height="300"/>
     </div>
   </body>
 </html>
