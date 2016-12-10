@@ -2,8 +2,8 @@
 <html ng-app="valueCalculator">
   <head>
     <meta charset="utf-8">
-    <script type="text/javascript" src="angular.min.js"></script>
-    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="../public/js/angular.min.js"></script>
+    <script type="text/javascript" src="controllers/app.js"></script>
     <title>First angular js app</title>
   </head>
   <body ng-app="valueCalculator">
@@ -26,7 +26,7 @@
     <div ng-controller="bulbController">
       <button ng-click="changeBulbState()"> Bulb Switch </button>
       <br>
-      <img ng-src="images/bulb_{{stateOfBulb}}.jpg" width="200" height="300"/>
+      <img ng-src="../public/images/bulb_{{stateOfBulb}}.jpg" width="200" height="300"/>
     </div>
   </body>
 </html>
