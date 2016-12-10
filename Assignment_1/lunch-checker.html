@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Lunch Checker</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+
+    <script type="text/javascript" src="../public/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+
+    <!-- angular js library required for the app to run -->
+    <script type="text/javascript" src="../public/js/angular.min.js"></script>
+
+    <!-- the controller app for the module -->
+    <script type="text/javascript" src="controllers/app.js"></script>
+
+    <style>
+      .message { font-size: 1.3em; font-weight: bold; }
+    </style>
+  </head>
+
+<body ng-app="LunchCheck">
+
+  <!-- A jumbotorn as a header bar -->
+  <div class="jumbotron" style="background-color: #6f5499;">
+    <h1 class="text-center" style="color: white;">
+      <strong>
+        Lunch Checker
+      </strong>
+    </h1>
+  </div>
+
+   <div class="container" ng-controller="LunchCheckController">
+    <div class="row">
+      <div class="col-sm-9 col-xs-7">
+        <div class="form-group">
+            <input id="lunch-menu" type="text" ng-model="foodItems"
+            placeholder="list comma separated dishes you usually have for lunch"
+            class="form-control bg-success" >
+        </div>
+      </div>
+
+      <div class="col-sm-3 col-xs-5">
+        <div class="form-group">
+            <button class="btn" style="border-radius: 0;" ng-click="checkLunch()">
+              Check If Too Much
+            </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="alert alert-{{stat}} {{hidden}} col-xs-offset-4 col-xs-4" role="alert">
+        <p class="text-center">
+          {{message}}
+        </p>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
