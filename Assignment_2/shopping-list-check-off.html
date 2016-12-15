@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shopping List Check Off</title>
+    <meta charset="utf-8">
+
+    <!-- add the bootstrap css for the required app -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css" media="screen" charset="utf-8">
+
+    <!-- add the js libraries required for the project -->
+    <script type="text/javascript" src="../public/js/angular.min.js"></script>
+    <script type="text/javascript" src="../public/js/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="../public/js/bootstrap.min.js"></script>
+
+    <!-- add the angular app module file -->
+    <script type="text/javascript" src="controllers/app.js"></script>
+
+  </head>
+  <body ng-app="ShoppingListCheckOff" style="background-color: #E0F2F1;">
+
+    <!-- heading of the page  -->
+    <div class="jumbotron text-center" style="background-color: #00695C;">
+      <h1 style="color: white;"> <strong> Shopping list helper </strong> </h1>
+    </div>
+
+    <!-- rest of the content of the page -->
+    <div class="container">
+      <div class="row">
+
+        <!-- the division to keep the current to-buy list -->
+        <div class="col-md-6" ng-controller="ToBuyController as toBuy">
+          <div class="panel panel-default">
+
+            <div class="panel-heading" style="background-color: #00897B;">
+              <h3 class="panel-title text-center" style="color: #E0F2F1; font-size: 200%;">
+                <strong> To-Buy List </strong>
+              </h3>
+            </div>
+
+            <!-- body of the panel to display the ordered list -->
+            <div class="panel-body">
+
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <div class="form-inline">
+                    <div class="form-group">
+                      <input type="text" class="form-control" placeholder="Enter name" ng-model="toBuy.itemName" >
+                    </div>
+
+                    <div class="form-group">
+                      <input type="Number" min="0" class="form-control"
+                        placeholder="Enter quantity" ng-model="toBuy.itemQuantity">
+                    </div>
+                    <button class="btn btn-warning" ng-click="toBuy.addItem()">Add Item</button>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="alert alert-warning text-center col-xs-8 col-xs-offset-2"
+                    ng-show="toBuy.errMessage.length > 0">
+                    <strong> {{toBuy.errMessage}} </strong>
+                  </div>
+                </div>
+
+              </div>
+
+              <ul class="list-group">
+                <li class="list-group-item" ng-repeat="item in toBuy.shopList"
+                style="color: #004D40; font-weight: bold; white; font-size: 130%;">
+                  <div class="row">
+
+                    <div class="col-sm-10 col-md-9 col-xs-9">
+                      Buy {{item.quantity}} {{item.name}}
+                    </div>
+
+                    <div class="col-sm-2 col-md-3 col-xs-3">
+                      <button type="button" class="btn btn-danger" ng-click="toBuy.buyItem($index)"> Bought </button>
+                    </div>
+                  </div>
+
+                </li>
+              </ul>
+
+              <div class="alert alert-success text-center" ng-show="toBuy.shopList.length == 0">
+                <strong> Nothing to Buy! </strong>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- the division to maintain the bought items list -->
+        <div class="col-md-6" ng-controller="AlreadyBoughtController as alreadyBought">
+          <div class="panel panel-default">
+
+            <div class="panel-heading" style="background-color: #00897B;">
+              <h3 class="panel-title text-center" style="color: #E0F2F1; font-size: 200%;">
+                <strong> Bought Items' List </strong>
+              </h3>
+            </div>
+
+            <!-- body of the panel to display the ordered list -->
+            <div class="panel-body">
+              <ul class="list-group" ng-show="alreadyBought.boughtList.length != 0">
+                <li class="list-group-item text-warning" ng-repeat="item in alreadyBought.boughtList"
+                  style="font-weight: bold; white; font-size: 130%;">
+                    Bought {{item.quantity}} {{item.name}}
+                </li>
+              </ul>
+
+              <div class="alert alert-danger text-center" ng-hide="alreadyBought.boughtList.length != 0">
+                <strong> Nothing Bought Yet! </strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
