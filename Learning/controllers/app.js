@@ -7,13 +7,23 @@
 
   .controller("DIController", DIController)
 
-  .controller("bulbController", bulbController);
+  .controller("bulbController", bulbController)
+
+  .controller("filterController", filterController)
+
+  .controller("repeatController", repeatController)
+
+  .filter("loveMessage", loveMessage);
 
   valueCalculatorController.$injector = ["$scope"];
 
   DIController.$injector = ["$scope", "$filter"];
 
-  bulbController.$injector = ["$scope"]
+  bulbController.$injector = ["$scope"];
+
+  filterController.$injector = ["$scope", "loveMessageFilter"];
+
+  repeatController.$injector = ["$scope"];
 
   function valueCalculatorController ($scope) {
     $scope.name = "";
@@ -53,6 +63,27 @@
         $scope.stateOfBulb = "on";
       }
     };
+  }
+
+  function filterController($scope, loveMessageFilter) {
+    $scope.amount = 50.75;
+
+    $scope.filteredMessage = loveMessageFilter("Animesh likes to love hot chicks");
+  }
+
+  // factory function for the custom filter
+  function loveMessage() {
+    return function (input) {
+      var input = input || "";
+      input = input.replace("likes", "loves");
+      return input;
+    }
+  }
+
+  function repeatController($scope) {
+    $scope.ShoppingList = [
+      "Eggs", "Roshomon", "marshmellows", "nogat", "nutella"
+    ];
   }
 
 })();

@@ -28,5 +28,22 @@
       <br>
       <img ng-src="../public/images/bulb_{{stateOfBulb}}.jpg" width="200" height="300"/>
     </div>
+
+    <div ng-controller="filterController">
+      <!-- lecture about filters -->
+
+      <p> {{amount | currency : "Rs " : 2}} </p>
+      <p> {{filteredMessage}} </p>
+    </div>
+
+    <div ng-controller="repeatController">
+      <!-- lecture about the repeat construct -->
+
+      <ul>
+        <li ng-repeat="item in ShoppingList">{{item}}</li>
+      </ul>
+
+    </div>
+
   </body>
 </html>
