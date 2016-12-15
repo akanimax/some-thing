@@ -35,7 +35,8 @@
 
       try {
         ShoppingList.addItemToShopList(item);
-        resetErrorMessage();
+        resetItem(); // reset the item properties
+        resetErrorMessage(); // reset the error message
       } catch (err) {
           toBuy.errMessage = err.message;
       }
@@ -45,6 +46,12 @@
     // function to reset the error message
     function resetErrorMessage() {
       toBuy.errMessage = "";
+    }
+
+    // function to reset the name and quantity fields
+    function resetItem() {
+      toBuy.itemName = "";
+      toBuy.itemQuantity = "";
     }
   }
 
