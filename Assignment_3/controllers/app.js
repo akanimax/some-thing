@@ -138,7 +138,7 @@
           var name = allItems[i].name.toLowerCase();
           var desc = allItems[i].description.toLowerCase();
 
-          if(name.indexOf(searchTerm) !== -1 || desc.indexOf(searchTerm) !== -1) {
+          if(name.indexOf(searchTerm.toLowerCase()) !== -1 || desc.indexOf(searchTerm.toLowerCase()) !== -1) {
             foundItems.push(allItems[i]);
           }
         }
