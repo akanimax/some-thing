@@ -1,0 +1,29 @@
+<ul class="list-group">
+  <li class="list-group-item teal-text" ng-repeat="item in items">
+    <div class="row">
+      <div class="col-lg-9 col-md-9 col-sm-8 col-xs-4">
+        ({{item.short_name}}) {{item.name}}
+      </div>
+
+      <div class="col-lg-1 col-md-1 col-sm-1 col-xs-2">
+        <button type="button" class="btn teal" data-toggle="collapse" data-target="#{{$index}}" aria-expanded="false" aria-controls="description">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </button>
+      </div>
+
+      <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+        <button type="button" class="btn pink" ng-click="onRemove({index: $index});">
+          Don't want this
+        </button>
+      </div>
+
+    </div>
+
+    <div class="collapse" id="{{$index}}">
+      <div class="well">
+        {{item.description}}
+      </div>
+    </div>
+
+  </li>
+</ul>

@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+  <div class="teal panel-heading text-center">
+    <h3 class="panel-title panel-heading"> {{ title }} </h3>
+  </div>
+  <div class="panel-body">
+
+    <!-- small panel area for the input gruop -->
+    <div class="panel panel-default">
+      <div class="panel-body">
+          <div class="form-group">
+            <div class="col-md-10 col-sm-9 col-xs-7">
+              <input type="text" class="form-control teal-text" placeholder="Search food item" ng-model="nidc.searchTerm">
+            </div>
+
+            <button type="button" class="btn teal" ng-click="nidc.getNarrowedData()">
+              Narrow it down
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- the area for displaying the names of the menuItems  -->
+    <menu-items items="nidc.menu_items" on-remove="nidc.removeItem(index)"> </menu-items>
+
+    <div class="alert alert-warning" ng-if="nidc.message.length != 0;">
+      <h2> <b> Nothing Found!</b> </h2>
+    </div>
+
+    </div>
+  </div>
+</div>
