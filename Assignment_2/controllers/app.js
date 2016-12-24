@@ -1,7 +1,8 @@
 (function () {
   "use strict";
 
-  angular.module("ShoppingListCheckOff", [])
+  //noinspection JSUnresolvedFunction
+    angular.module("ShoppingListCheckOff", [])
     .controller("ToBuyController", ToBuyController)
     .controller("AlreadyBoughtController", AlreadyBoughtController)
     .service("ShoppingList", ShoppingListCheckOffService);
@@ -21,7 +22,7 @@
     toBuy.itemQuantity = "";
 
     // state variable for error message
-    toBuy.errMessage = ""
+    toBuy.errMessage = "";
 
     // function to call the buymethod of the service
     toBuy.buyItem = function (index) {
@@ -43,7 +44,7 @@
           toBuy.errMessage = err.message;
       }
 
-    }
+    };
 
     // function to reset the error message
     function resetErrorMessage() {
