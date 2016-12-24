@@ -143,7 +143,7 @@
           }
         }
 
-        return foundItems.reverse();
+        return foundItems;
 
       }).catch(function (error) {
         console.log("Server not Responding");
