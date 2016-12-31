@@ -1,0 +1,51 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-8 col-xs-offset-2">
+
+      <!-- The breadCrumb for hierarchical navigation -->
+      <ol class="breadcrumb">
+        <li><a ui-sref="home">Home</a></li>
+        <li><a ui-sref="categories">Categories</a></li>
+        <li class="active">{{iControl.name}}</li>
+      </ol>
+
+      <div class="panel">
+        <div class="panel-heading teal text-center">
+          <h3 class="panel-title"> <b> Items inside {{iControl.name}} </b> </h3>
+        </div>
+
+        <div class="panel-body plain">
+
+          <ul class="list-group">
+            <li class="list-group-item teal-text" ng-repeat="item in iControl.items">
+              <div class="row">
+                <div class="col-sm-10 col-xs-8">
+                  ({{item.short_name}}) {{item.name}}
+                </div>
+
+                <div class="col-sm-2 col-xs-4">
+                  <button type="button" class="btn teal" data-toggle="collapse" data-target="#{{$index}}" aria-expanded="false" aria-controls="description">
+                    <span class="glyphicon glyphicon-chevron-down"></span>
+                  </button>
+                </div>
+
+              </div>
+
+              <div class="collapse" id="{{$index}}">
+                <div class="well">
+                  {{item.description}}
+                </div>
+              </div>
+
+            </li>
+          </ul>
+
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</div>

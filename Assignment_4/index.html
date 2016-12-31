@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KP-CR (`KOK PA` Chinese Restaurant)</title>
+
+    <!-- import the angular js library and the jquery library -->
+    <script src="../public/js/jquery-3.0.0.min.js" charset="utf-8"></script>
+    <script src="../public/js/angular.min.js" charset="utf-8"></script>
+
+    <!-- import the bootstrap with js package and setup the customised css for the project  -->
+    <script src="../public/js/bootstrap.min.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="../public/css/custom.css" media="screen" charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- import the ui-router package here  -->
+    <script src="../public/js/angular-ui-router.min.js" charset="utf-8"></script>
+
+    <!-- modules for the application -->
+    <script src="src/menu-app/menuapp.module.js" charset="utf-8"></script>
+    <script src="src/data/data.module.js" charset="utf-8"></script>
+
+    <!-- artifacts of the menu-app module -->
+    <script src="src/menu-app/title.directive.js" charset="utf-8"></script>
+    <script src="src/menu-app/categories.controller.js" charset="utf-8"></script>
+    <script src="src/menu-app/categories-list.component.js" charset="utf-8"></script>
+    <script src="src/menu-app/items.controller.js" charset="utf-8"></script>
+
+    <!-- artifacts of the data module -->
+    <script src="src/data/menudata.service.js" charset="utf-8"></script>
+
+    <!-- routes configured for the application -->
+    <script src="src/routes.js" charset="utf-8"></script>
+
+  </head>
+  <body ng-app="menuApp">
+
+    <!-- The header of the page that I iconically use in every assignment of mine -->
+    <jumbo-title title="`KOK PA` Chinese Restaurant"> </jumbo-title>
+
+    <!-- the display area of the page -->
+    <ui-view> </ui-view>
+
+
+  </body>
+</html>
