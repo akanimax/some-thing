@@ -1,7 +1,7 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-8 col-xs-offset-2">
+    <div class="col-sm-8 col-sm-offset-2 col-xs-12">
 
       <!-- The breadCrumb for hierarchical navigation -->
       <ol class="breadcrumb">
@@ -20,11 +20,11 @@
           <ul class="list-group">
             <li class="list-group-item teal-text" ng-repeat="item in iControl.items">
               <div class="row">
-                <div class="col-sm-10 col-xs-8">
+                <div class="col-sm-10 col-xs-9">
                   ({{item.short_name}}) {{item.name}}
                 </div>
 
-                <div class="col-sm-2 col-xs-4">
+                <div class="col-sm-2 col-xs-3">
                   <button type="button" class="btn teal" data-toggle="collapse" data-target="#{{$index}}" aria-expanded="false" aria-controls="description">
                     <span class="glyphicon glyphicon-chevron-down"></span>
                   </button>
