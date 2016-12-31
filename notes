@@ -1,0 +1,26 @@
+Week 4:
+module 1: COMPONENTS AND COMPONENT BASED ARCHITECTURE. (33)
+// got to know about the component module of angular 1.8
+// Following are the methods of component lifecycle:
+// $onInit(), $onDestroy(), $doCheck(): this gets executed whenever the digest cycle gets fired!
+
+module 2: ANGULARJS EVENT SYSTEM AND MODULES. (34 - 35)
+// first two lectures are about the event system and about the two functions used: $broadcast() (down) and $emit() (up) the DOM tree.
+// these lecture also explain the $on() method.
+// the next two lectures are about splitting up the application into different modules and using the dependency array in the module method of
+// angular.
+
+module 3: INTRODUCTION TO SINGLE PAGE ROUTING WITH UI-ROUTER. (36 - 37)
+// first two lectures are about the plain routing technique and,
+// last two lectures are about the use of controllers for the routed views.
+
+module 4: HANDLING DATA WITH ROUTING. (38 - 39)
+// two parts of the first lecture give the details of resolving the data required for the view to render.
+// the two parts of the second lecture give the details of using the query parameters for fetching the proper data
+
+
+module 5: NESTED VIEWS AND TRANSITION EVENTS. (40 - 41)
+// first two parts of lectures explained the use of nested views for ui-router
+// last two parts of lectures explained the use of various events inside of ui-router and using them for
+// displaying loading spinners or handling the different types of errors.
+// documentation for ui-router package: https://github.com/angular-ui/ui-router/wiki
