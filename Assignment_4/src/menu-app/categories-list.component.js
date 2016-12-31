@@ -14,7 +14,7 @@
     var $ctrl = this;
 
     console.log($ctrl);
-    console.log($ctrl.items);
+    console.log($ctrl.categories);
   }
 
 })();
