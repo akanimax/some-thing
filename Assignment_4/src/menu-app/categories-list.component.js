@@ -13,7 +13,8 @@
   function categoriesListController() {
     var $ctrl = this;
 
-    
+    console.log($ctrl);
+    console.log($ctrl.items);
   }
 
 })();
