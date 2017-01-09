@@ -1,0 +1,83 @@
+ <!-- The form for taking the input of the data for the signup process -->
+ <div class="container">
+   <div class="row">
+     <div class="col-lg-10 col-lg-offset-1">
+
+       <!-- the required signup form -->
+       <fieldset>
+         <legend style="color: white;"> Please fill the Signup Information </legend>
+
+         <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+           <form name="signUpForm" novalidate>
+             <div class="form-group">
+               <label> Name </label>
+               <input type="text" class="form-control" name="fname"  placeholder="Firstname"
+                        ng-model="sUCtrl.user.name.fname"
+                        ng-required = "true"
+                        ng-minlength = "4"
+                        ng-maxlength = "20">
+               <span ng-if="(signUpForm.fname.$error.minlength ||
+               signUpForm.fname.$error.maxlength || signUpForm.fname.$error.required)
+               && signUpForm.fname.$touched">
+                 *First name is required</span>
+
+               <input type="text" class="form-control" name="lname"  placeholder="Lastname"
+                         ng-model="sUCtrl.user.name.lname"
+                         ng-required = "true"
+                         ng-minlength = "4"
+                         ng-maxlength = "20">
+              <span ng-if="(signUpForm.lname.$error.minlength ||
+              signUpForm.lname.$error.maxlength || signUpForm.lname.$error.required)
+              && signUpForm.lname.$touched">
+                  *Last name is required</span>
+               <br>
+
+               <label> Email </label>
+               <input type="email" class="form-control" name="email" placeholder="Email"
+                        ng-model="sUCtrl.user.email"
+                        ng-required = "true">
+               <span ng-if="signUpForm.email.$error.required
+                          && signUpForm.email.$touched">
+                    *email is required </span>
+               <br>
+
+               <label> telno. </label>
+               <input type="text" class="form-control" name="telno"
+                      placeholder="###-###-####"
+                      pattern="(\d{3})-(\d{3})-(\d{4})"
+                      ng-required="true"
+                      ng-model="sUCtrl.user.telno">
+                <span ng-if="(signUpForm.telno.$error.required || signUpForm.telno.$invalid)
+                && signUpForm.telno.$touched">
+                    *Telephone Number must in proper format: ###-###-#### </span>
+               <br>
+
+               <label> Favourite. </label>
+               <input type="text" class="form-control" name="fav"
+                  placeholder="Please denote the number of your favourite dish"
+                  ng-model="sUCtrl.user.fav"
+                  valid-menu-item>
+
+                <span ng-if="signUpForm.fav.$error.validMenuItem && signUpForm.fav.$touched">
+                  *Please provide a valid menu item number </span>
+               <br>
+
+               <button
+                  class="btn btn-primary col-sm-offset-4"
+                  ng-disabled="signUpForm.$invalid"
+                  ng-click="sUCtrl.saveInfo()">
+
+                 Submit Information
+               </button>
+             </div>
+           </form>
+         </div>
+       </fieldset>
+
+       <div class="alert alert-warning text-center" ng-if="sUCtrl.message.length != 0">
+         <b>{{ sUCtrl.message }}</b>
+       </div>
+
+     </div>
+   </div>
+ </div>

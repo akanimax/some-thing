@@ -1,0 +1,28 @@
+<!-- The view to display the personalized information -->
+<div class="container">
+  <div class="alert alert-warning text-center" ng-if="!infoCtrl.dataStatus">
+    <b>You have not signed up for this session!
+    <a ui-sref="public.signup"> Please Sign-up</a></b>
+  </div>
+
+  <div class="panel panel-warning" ng-if="infoCtrl.dataStatus">
+    <div class="panel-heading text-center">
+      <h3 class="panel-title"> <b> Your Information </b></h3>
+    </div>
+    <div class="panel-body text-center" style="color: black;">
+      Mr./Mrs. {{infoCtrl.userInfo.name.fname}} {{infoCtrl.userInfo.name.lname}} <br>
+      email: {{ infoCtrl.userInfo.email }} <br>
+      tel: {{ infoCtrl.userInfo.telno }} <br>
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title"><b>Favourite item </b></h3>
+        </div>
+        <div class="panel-body">
+          <div class="col-md-offset-4">
+            <menu-item menu-item="infoCtrl.favMenuItem"> </menu-item>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
