@@ -24,3 +24,10 @@ module 5: NESTED VIEWS AND TRANSITION EVENTS. (40 - 41)
 // last two parts of lectures explained the use of various events inside of ui-router and using them for
 // displaying loading spinners or handling the different types of errors.
 // documentation for ui-router package: https://github.com/angular-ui/ui-router/wiki
+
+
+
+Week 5: 
+module 1: FORM VALIDATION AND INTRODUCTION TO TESTING JAVASCRIPT. (42 - 43)
+// lecture 42 explained the concept of form validation and using it for betterment
+// lecture 43 explained the concept of Unit testing and using Jasmine framework for testing independent pieces of small testable code in javascript.
